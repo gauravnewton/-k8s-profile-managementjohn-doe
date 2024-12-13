@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: kubernetes-profile-management
+  thymeleaf:
+    suffix: .jsp
+  data:
+    mongodb:
+      uri: mongodb://root:root@localhost:27017/eksConfigProfiles?authSource=admin
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+developer:
+  name: Gaurav Kumar
+  email: gaurav.mute@gmail.com
+  webUrl: https://github.com/gauravnewton
+
+application:
+  upload-dir: /Users/gaurav/Downloads
