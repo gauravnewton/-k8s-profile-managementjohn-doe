@@ -5,6 +5,7 @@
 
 package com.tech.reloded.documents;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,8 +26,10 @@ import java.util.List;
 @Document(collection = "eksConfig")
 public class EksConfigDocument {
     @Id
+    @Schema(example = "675c560e2966f26282a8913d")
     private String id;
     @DBRef
     private List<MetaDataDocument> metaData;
+    @Schema(example = "profile-1")
     private String userName;
 }

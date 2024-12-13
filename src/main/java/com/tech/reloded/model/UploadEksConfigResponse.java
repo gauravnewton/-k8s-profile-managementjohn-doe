@@ -5,6 +5,7 @@
 
 package com.tech.reloded.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,8 @@ import org.springframework.http.HttpStatus;
 @ToString
 public class UploadEksConfigResponse {
     private EksConfigModel eksConfigModel;
+    @Schema(example = "message from server")
     private String message;
+    @Schema(example = "200")
     private HttpStatus statusCode;
 }

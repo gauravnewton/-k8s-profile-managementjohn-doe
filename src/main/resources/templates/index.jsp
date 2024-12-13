@@ -29,6 +29,9 @@
             <button type="button" class="btn btn-success mr-1 float-right" data-toggle="modal" data-target="#uploadEksConfigYamlModal">
               Add new eks config to list
             </button>
+            <a type="button" class="btn btn-warning float-right mr-1" target="_blank" href="http://localhost:8080/swagger-ui/index.html#/eks-rest-controller/updateMetaData">
+              API documentation
+            </a>
         </div>
     </div>
     <hr/>
@@ -730,7 +733,7 @@
             data: JSON.stringify(eksPayload),
             contentType: 'application/json',
             success: function(response) {
-                if (response && response.status == "OK"){
+                if (response && response.status == "CREATED"){
                     jNotify.success('Success', response.message, {
                         delay: 2500,
                         fadeDelay: 1000,
