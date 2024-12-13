@@ -22,10 +22,9 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class GlobalErrorResponse {
-    @Schema(example="500")
+    @Schema(example = "500")
     private HttpStatus status;
-    @Schema(example="error message")
+    @Schema(example = "Internal server error")
     private String message;
-    @Schema(example="error.code.goes.here")
     private List<String> errorCodes;
 }

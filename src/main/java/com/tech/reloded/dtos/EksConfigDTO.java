@@ -5,6 +5,7 @@
 
 package com.tech.reloded.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ import java.util.List;
 @ToString
 public class EksConfigDTO {
     private List<MetaDataDTO> metaData;
+    @Schema(example="profile-1")
     private String userName;
 }

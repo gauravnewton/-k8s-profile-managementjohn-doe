@@ -5,6 +5,7 @@
 
 package com.tech.reloded.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,9 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class ExecModel {
+    @Schema(example = "client.authentication.k8s.io/v1beta1")
     private String apiVersion;
     private List<String> args;
+    @Schema(example = "aws")
     private String command;
 }
