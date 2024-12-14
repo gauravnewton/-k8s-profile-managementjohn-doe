@@ -74,7 +74,7 @@ public class FileUtils {
      * @param filePath the file path
      * @return the eks config model
      */
-    public static EksConfigModel parseYaml(String filePath) {
+    public EksConfigModel parseYaml(String filePath) {
         try (InputStream inputStream = new FileInputStream(filePath)) {
             Yaml yaml = new Yaml();
             Map<String, Object> yamlMap = yaml.load(inputStream);
@@ -92,7 +92,7 @@ public class FileUtils {
      * @param yamlMap the yaml map
      * @return the eks config model
      */
-    public static EksConfigModel parseYamlMapToEksConfig(Map<String, Object> yamlMap) {
+    public EksConfigModel parseYamlMapToEksConfig(Map<String, Object> yamlMap) {
         EksConfigModel eksConfigModel = new EksConfigModel();
         eksConfigModel.setApiVersion((String) yamlMap.get("apiVersion"));
         populateClusters(eksConfigModel, yamlMap);
@@ -105,7 +105,7 @@ public class FileUtils {
         return eksConfigModel;
     }
 
-    private static void populateUsers(EksConfigModel eksConfigModel, Map<String, Object> yamlMap) {
+    private void populateUsers(EksConfigModel eksConfigModel, Map<String, Object> yamlMap) {
         List<UserModel> userModels = new ArrayList<>();
         List<Map<String, Object>> userList = (List<Map<String, Object>>) yamlMap.get("users");
         for (Map<String, Object> context : userList) {
@@ -123,7 +123,7 @@ public class FileUtils {
         eksConfigModel.setUsers(userModels);
     }
 
-    private static void populateContexts(EksConfigModel eksConfigModel, Map<String, Object> yamlMap) {
+    private void populateContexts(EksConfigModel eksConfigModel, Map<String, Object> yamlMap) {
         List<ContextModel> contextModels = new ArrayList<>();
         List<Map<String, Object>> contextList = (List<Map<String, Object>>) yamlMap.get("contexts");
         for (Map<String, Object> context : contextList) {
@@ -137,7 +137,7 @@ public class FileUtils {
         eksConfigModel.setContexts(contextModels);
     }
 
-    private static void populateClusters(EksConfigModel eksConfigModel, Map<String, Object> yamlMap) {
+    private void populateClusters(EksConfigModel eksConfigModel, Map<String, Object> yamlMap) {
         List<ClusterModel> clusterModels = new ArrayList<>();
         List<Map<String, Object>> clusterList = (List<Map<String, Object>>) yamlMap.get("clusters");
         for (Map<String, Object> cluster : clusterList) {
