@@ -45,7 +45,7 @@ public class EksConfigServiceImpl implements EksConfigService {
     @Override
     public EksConfigModel uploadEksConfigFileAndParseIt(MultipartFile file) {
         String filePath = fileUtils.uploadFile(file);
-        return FileUtils.parseYaml(filePath);
+        return fileUtils.parseYaml(filePath);
     }
 
     @Override

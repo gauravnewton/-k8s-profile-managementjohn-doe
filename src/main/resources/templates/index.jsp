@@ -29,7 +29,7 @@
             <button type="button" class="btn btn-success mr-1 float-right" data-toggle="modal" data-target="#uploadEksConfigYamlModal">
               Add new eks config to list
             </button>
-            <a type="button" class="btn btn-warning float-right mr-1" target="_blank" href="http://localhost:8080/swagger-ui/index.html#/eks-rest-controller/updateMetaData">
+            <a type="button" class="btn btn-warning float-right mr-1" target="_blank" href="http://localhost:8080/swagger-ui/index.html">
               API documentation
             </a>
         </div>
