@@ -120,7 +120,7 @@ public class EksConfigServiceImplTest {
         final EksConfigDocument result = eksConfigServiceImplUnderTest.addEksConfigToProfile(eksConfigDTO);
 
         assertNotNull(result.getId());
-        assertNotNull(result.getMetaData().getFirst().getId());
+        assertNotNull(result.getMetaData().get(0).getId());
         verify(mockMetaDataDocumentRepo).saveAll(List.of(metaDataDocument));
         verify(mockEksConfigRepo).save(eksConfigDocument);
     }
