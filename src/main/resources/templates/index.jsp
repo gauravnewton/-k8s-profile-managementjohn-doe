@@ -222,7 +222,7 @@
 
 <script>
     var eksConfigTable;
-    var metaDataTable
+    var metaDataTable;
     $('.tree-plus').addClass('modal-dialog-scrollable');
 
     var renderSelectedYaml = function(json) {
@@ -337,6 +337,10 @@
                 }
               }
             ]
+        });
+
+        $('#metaDataModal').on('shown.bs.modal', function () {
+            metaDataTable.fnAdjustColumnSizing()
         });
     }
 
