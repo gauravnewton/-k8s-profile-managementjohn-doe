@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gauravnewton/js-libs/notify/css/notify.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gauravnewton/json-checkable-tree/jquery.jsontree.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gauravnewton/Jquery-toggle/jquery.jsontree.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
@@ -23,6 +24,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
+            <label name="isStrictParsingEnabledLabel" for="isStrictParsingEnabled">Strict yml parsing</label>
+            <input type="checkbox" name="isStrictParsingEnabled" id="isStrictParsingEnabled" />
             <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#sampleEksConfigYamlModel">
               Sample eks config yaml file
             </button>
@@ -219,10 +222,12 @@
 <script src="https://cdn.jsdelivr.net/gh/gauravnewton/js-libs/notify/js/notify.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/gauravnewton/json-checkable-tree/jquery.jsontree.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gauravnewton/js-libs/Jquery-toggle/lc_switch.min.js"></script>
 
 <script>
     var eksConfigTable;
     var metaDataTable;
+    var isStrictParsingEnabled = false;
     $('.tree-plus').addClass('modal-dialog-scrollable');
 
     var renderSelectedYaml = function(json) {
@@ -828,6 +833,16 @@
     var fileAcceptedByDropZone = false;
     Dropzone.autoDiscover = false;
     $(function() {
+        const checkboxes = 'input[type=checkbox]';
+        lc_switch(checkboxes);
+
+        $(checkboxes).each(function(key, el) {
+            el.addEventListener('lcs-statuschange', (e) => {
+                isStrictParsingEnabled = (el.checked) ? true : false;
+            });
+        });
+
+
         myDropzone = new Dropzone('#eksConfigYamlForm', {
             addRemoveLinks: true,
             autoProcessQueue: false,
@@ -899,6 +914,7 @@
                     });
                     formData.append('content', CKEDITOR.instances['artical'].getData());
                     formData.append('uploadedBy', '<?php echo  $this->session->userdata('username'); ?>'); */
+                    formData.append('strictParsing', isStrictParsingEnabled);
                     console.log(formData);
                 });
             },

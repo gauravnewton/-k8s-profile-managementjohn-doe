@@ -57,7 +57,7 @@ public class EksConfigServiceImplTest {
      * @throws Exception the exception
      */
     @Test
-    public void testUploadEksConfigFileAndParseIt() throws Exception {
+    public void testUploadEksConfigFileAndParseItAsEksConfigModel() throws Exception {
         // Setup
         final MultipartFile file = new MockMultipartFile("mockFileName", "mockFileContent".getBytes());
         final EksConfigModel expectedResult = new EksConfigModel();
@@ -93,13 +93,13 @@ public class EksConfigServiceImplTest {
         expectedResult.setUsers(List.of(userModel));
 
         when(mockFileUtils.uploadFile(any(MultipartFile.class))).thenReturn("mockedUploadedFilPath");
-        when(mockFileUtils.parseYaml("mockedUploadedFilPath")).thenReturn(expectedResult);
+        when(mockFileUtils.parseYamlAsEksConfigModel("mockedUploadedFilPath")).thenReturn(expectedResult);
 
-        final EksConfigModel result = eksConfigServiceImplUnderTest.uploadEksConfigFileAndParseIt(file);
+        final EksConfigModel result = eksConfigServiceImplUnderTest.uploadEksConfigFileAndParseItAsEksConfigModel(file);
 
         assertThat(result).isEqualTo(expectedResult);
         verify(mockFileUtils).uploadFile(any(MultipartFile.class));
-        verify(mockFileUtils).parseYaml("mockedUploadedFilPath");
+        verify(mockFileUtils).parseYamlAsEksConfigModel("mockedUploadedFilPath");
     }
 
     /**
