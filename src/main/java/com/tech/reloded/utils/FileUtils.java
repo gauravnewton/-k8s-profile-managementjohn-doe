@@ -74,11 +74,28 @@ public class FileUtils {
      * @param filePath the file path
      * @return the eks config model
      */
-    public EksConfigModel parseYaml(String filePath) {
+    public EksConfigModel parseYamlAsEksConfigModel(String filePath) {
         try (InputStream inputStream = new FileInputStream(filePath)) {
             Yaml yaml = new Yaml();
             Map<String, Object> yamlMap = yaml.load(inputStream);
             return parseYamlMapToEksConfig(yamlMap);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (NullPointerException e) {
+            throw new InvalidFileException("yaml file seems to be invalid, please refer sample file structure");
+        }
+    }
+
+    /**
+     * Parse yaml as model map.
+     *
+     * @param filePath the file path
+     * @return the map
+     */
+    public Map<String, Object> parseYamlAsModel(String filePath) {
+        try (InputStream inputStream = new FileInputStream(filePath)) {
+            Yaml yaml = new Yaml();
+            return yaml.load(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (NullPointerException e) {

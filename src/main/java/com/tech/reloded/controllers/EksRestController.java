@@ -52,9 +52,13 @@ public class EksRestController {
             @ApiResponse(responseCode = "200", description = "Uploaded and parsed successfully", content = { @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = EksConfigModel.class)) }),
             @ApiResponse(responseCode = "400", description = "Invalid payload provided", content = { @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = GlobalErrorResponse.class)) }),
             @ApiResponse(responseCode = "500", description = "Internal server error", content = { @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = GlobalErrorResponse.class)) }) })
-    public ResponseEntity<?> uploadEksConfigYamlFile(@RequestParam("file") MultipartFile file) {
-        EksConfigModel eksConfigModel = eksConfigService.uploadEksConfigFileAndParseIt(file);
-        return new ResponseEntity<>(new GlobalResponse(eksConfigModel, YAML_UPLOADED_AND_PARSED_SUCCESSFULLY, HttpStatus.OK), HttpStatus.OK);
+    public ResponseEntity<?> uploadEksConfigYamlFile(@RequestParam("file") MultipartFile file, @RequestParam("strictParsing") boolean strictParsing) {
+        if (strictParsing) {
+            EksConfigModel eksConfigModel = eksConfigService.uploadEksConfigFileAndParseItAsEksConfigModel(file);
+            return new ResponseEntity<>(new GlobalResponse(eksConfigModel, YAML_UPLOADED_AND_PARSED_SUCCESSFULLY, HttpStatus.OK), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(new GlobalResponse(eksConfigService.uploadEksConfigFileAndParseItAsMap(file), YAML_UPLOADED_AND_PARSED_SUCCESSFULLY, HttpStatus.OK), HttpStatus.OK);
+        }
     }
 
     /**

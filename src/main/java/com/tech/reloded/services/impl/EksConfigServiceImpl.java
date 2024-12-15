@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -43,9 +44,15 @@ public class EksConfigServiceImpl implements EksConfigService {
     private FileUtils fileUtils;
 
     @Override
-    public EksConfigModel uploadEksConfigFileAndParseIt(MultipartFile file) {
+    public EksConfigModel uploadEksConfigFileAndParseItAsEksConfigModel(MultipartFile file) {
         String filePath = fileUtils.uploadFile(file);
-        return fileUtils.parseYaml(filePath);
+        return fileUtils.parseYamlAsEksConfigModel(filePath);
+    }
+
+    @Override
+    public Map<String, Object> uploadEksConfigFileAndParseItAsMap(MultipartFile file) {
+        String filePath = fileUtils.uploadFile(file);
+        return fileUtils.parseYamlAsModel(filePath);
     }
 
     @Override

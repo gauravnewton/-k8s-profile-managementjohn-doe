@@ -12,6 +12,7 @@ import com.tech.reloded.model.EksConfigModel;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -24,7 +25,15 @@ public interface EksConfigService {
      * @param file the file
      * @return the eks config model
      */
-    public EksConfigModel uploadEksConfigFileAndParseIt(MultipartFile file);
+    public EksConfigModel uploadEksConfigFileAndParseItAsEksConfigModel(MultipartFile file);
+
+    /**
+     * Upload eks config file and parse it as map map.
+     *
+     * @param file the file
+     * @return the map
+     */
+    public Map<String, Object> uploadEksConfigFileAndParseItAsMap(MultipartFile file);
 
     /**
      * Add eks config to profile eks config document.
