@@ -52,7 +52,7 @@ public class EksConfigServiceImpl implements EksConfigService {
     @Override
     public Map<String, Object> uploadEksConfigFileAndParseItAsMap(MultipartFile file) {
         String filePath = fileUtils.uploadFile(file);
-        return fileUtils.parseYamlAsModel(filePath);
+        return fileUtils.parseYamlAsMap(filePath);
     }
 
     @Override
