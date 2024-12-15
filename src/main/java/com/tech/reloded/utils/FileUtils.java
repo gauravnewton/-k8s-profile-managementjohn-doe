@@ -87,12 +87,12 @@ public class FileUtils {
     }
 
     /**
-     * Parse yaml as model map.
+     * Parse yaml as map map.
      *
      * @param filePath the file path
      * @return the map
      */
-    public Map<String, Object> parseYamlAsModel(String filePath) {
+    public Map<String, Object> parseYamlAsMap(String filePath) {
         try (InputStream inputStream = new FileInputStream(filePath)) {
             Yaml yaml = new Yaml();
             return yaml.load(inputStream);
