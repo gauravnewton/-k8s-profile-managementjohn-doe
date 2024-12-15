@@ -27,13 +27,16 @@
             <label name="isStrictParsingEnabledLabel" for="isStrictParsingEnabled">Strict yml parsing</label>
             <input type="checkbox" name="isStrictParsingEnabled" id="isStrictParsingEnabled" />
             <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#sampleEksConfigYamlModel">
-              Sample eks config yaml file
+              <i class="fa fa-code" aria-hidden="true"></i> Sample eks config yaml file
             </button>
             <button type="button" class="btn btn-success mr-1 float-right" data-toggle="modal" data-target="#uploadEksConfigYamlModal">
-              Add new eks config to list
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> Add new eks config to list
             </button>
-            <a type="button" class="btn btn-warning float-right mr-1" target="_blank" href="http://localhost:8080/swagger-ui/index.html">
-              API documentation
+            <a type="button" class="btn btn-secondary float-right mr-1" target="_blank" href="http://localhost:8080/swagger-ui/index.html">
+              <i class="fa fa-question-circle" aria-hidden="true"></i> API documentation
+            </a>
+            <a type="button" class="btn btn-warning float-right mr-1" target="_blank" href="https://github.com/gauravnewton/k8s-profile-management-gaurav-kumar">
+              <i class="fa fa-github-square" aria-hidden="true"></i> Source Code
             </a>
         </div>
     </div>
@@ -70,35 +73,35 @@
               <div class="row">
                   <div class="col-sm-12" id="parsedYamlDiv">
                     <pre>
-                        apiVersion: v1
-                        clusters:
-                        - cluster:
-                            certificate-authority-data: VVSG5kbktsamRVCkZ6ajl1SzdlNDlTamFINjFwYnJPUUcyUGk4MU92UTFvPQ0V3L1gxY2g4NGU4a0RPcUpFbHN4TCs2ZHZIdW1weEp6SEI3VlBMR0IKYXNwZDJPd0lQWjdzVnNtVW9PUitTS096Y3UxbEZEM2hKbkNHVVY3VnFQeWxsUFJTK1BLcFNnSDdDNE42UENHUQpxRE1GV2Y0V2F0REtML09ZdExwZWNQa2pUWTZhb0EzR1dKRnZGaDJ0VzlSVHBGSWNEMDRmWERLM3RKdkViOURSeGlJQVdiR3lYYb3BmCmdCaFNsZDhUWUdWaVFLMGYwWU1jS0dhd2VpQlhxYit5Wlh3RGJRTjQ5a2dnOUFBUlkwRzhCWjg5OStuakRzQm0KSUZiL241WXYvWSs1Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQWJLQ3pwY3NWTkF3Rk84ejdtdFcxRUEKWUVFK3NrbGV5Qm5TclBsVWVlNDJIMSszTHBIa2oyMUxuVE5uem5zSXY4R0RqOWFQOU5hODhXRnd2bWlNZGtJRgp2Wi9XMDUvVjBkMU1iWkNaS1hhMGtEM2ZTRTJoQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUamtuSEIyV1Z4SWJ2WWJLNkdEbnkzemhCL0h6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ2NnVVJka3pPOApxTDhLbSt4QVVqNnBiSitvbnlPVnplNVBBMlNSQ3FTVGxJUzlJc0dWZENoOGNBY3NuMk1TZ1V3VllMMHNXQjBDCkI3eTk4L3FoZWdGcWFzFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRFd01qRXhNREkzTlRkYUZ3MHpOREV3TVRreE1ETXlOVGRhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUMxb29BWkZDSUVXT2d4WGMrTS9zZ3FDTXRmSldBRTJQdkJjbHNkR3FDL2paazhlRlRSckppTXFZLysKUzl0K0labnZYeDAxTjNVVXViMWxYWjhUN1VWMEprTzBoVXlKcWEybGQ4Z1g5VzVhd1B2UVRFeUsxdTV4TFJOcQo2UFFqWVlhNTBpWmNaTGR4dHBQb2ZvYUFMSFVzdzNaRXNyU1Z6VzN2V3ZMK0R6cWRkaHh3Q1jJzUVFRMm1jSOXV1bmYxK0J
-                            server: https://8FDE7667FB3DA3D76DA58D4B651EF537.gr2.eu-west-3.eks.amazonaws.com
-                          name: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
-                        contexts:
-                        - context:
-                            cluster: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
-                            user: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
-                          name: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
-                        current-context: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
-                        kind: Config
-                        preferences: {}
-                        users:
-                        - name: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
-                          user:
-                            exec:
-                              apiVersion: client.authentication.k8s.io/v1beta1
-                              args:
-                              - --region
-                              - eu-west-3
-                              - eks
-                              - get-token
-                              - --cluster-name
-                              - abcd-eks-cluster
-                              - --output
-                              - json
-                              command: aws
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: VVSG5kbktsamRVCkZ6ajl1SzdlNDlTamFINjFwYnJPUUcyUGk4MU92UTFvPQ0V3L1gxY2g4NGU4a0RPcUpFbHN4TCs2ZHZIdW1weEp6SEI3VlBMR0IKYXNwZDJPd0lQWjdzVnNtVW9PUitTS096Y3UxbEZEM2hKbkNHVVY3VnFQeWxsUFJTK1BLcFNnSDdDNE42UENHUQpxRE1GV2Y0V2F0REtML09ZdExwZWNQa2pUWTZhb0EzR1dKRnZGaDJ0VzlSVHBGSWNEMDRmWERLM3RKdkViOURSeGlJQVdiR3lYYb3BmCmdCaFNsZDhUWUdWaVFLMGYwWU1jS0dhd2VpQlhxYit5Wlh3RGJRTjQ5a2dnOUFBUlkwRzhCWjg5OStuakRzQm0KSUZiL241WXYvWSs1Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQWJLQ3pwY3NWTkF3Rk84ejdtdFcxRUEKWUVFK3NrbGV5Qm5TclBsVWVlNDJIMSszTHBIa2oyMUxuVE5uem5zSXY4R0RqOWFQOU5hODhXRnd2bWlNZGtJRgp2Wi9XMDUvVjBkMU1iWkNaS1hhMGtEM2ZTRTJoQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUamtuSEIyV1Z4SWJ2WWJLNkdEbnkzemhCL0h6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ2NnVVJka3pPOApxTDhLbSt4QVVqNnBiSitvbnlPVnplNVBBMlNSQ3FTVGxJUzlJc0dWZENoOGNBY3NuMk1TZ1V3VllMMHNXQjBDCkI3eTk4L3FoZWdGcWFzFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRFd01qRXhNREkzTlRkYUZ3MHpOREV3TVRreE1ETXlOVGRhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUMxb29BWkZDSUVXT2d4WGMrTS9zZ3FDTXRmSldBRTJQdkJjbHNkR3FDL2paazhlRlRSckppTXFZLysKUzl0K0labnZYeDAxTjNVVXViMWxYWjhUN1VWMEprTzBoVXlKcWEybGQ4Z1g5VzVhd1B2UVRFeUsxdTV4TFJOcQo2UFFqWVlhNTBpWmNaTGR4dHBQb2ZvYUFMSFVzdzNaRXNyU1Z6VzN2V3ZMK0R6cWRkaHh3Q1jJzUVFRMm1jSOXV1bmYxK0J
+    server: https://8FDE7667FB3DA3D76DA58D4B651EF537.gr2.eu-west-3.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
+    user: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
+  name: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
+current-context: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-west-3:335425316266:cluster/abcd-eks-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - eu-west-3
+      - eks
+      - get-token
+      - --cluster-name
+      - abcd-eks-cluster
+      - --output
+      - json
+      command: aws
                     <pre>
                   </div>
               </div>
@@ -234,7 +237,7 @@
         $('#selectedYamlJSON').html(JSON.stringify(json, null, 2));
     }
 
-    var loadAllMetaDataForEksConfigId = function(id) {
+    var loadAllMetaDataForEksConfigId = function(id, showMessage) {
         openLoader('Loading all meta data for Eks Config id '+id+'...');
         $.ajax({
             url: '/eks/getAllMetaDataForEksConfigId/'+id,
@@ -243,14 +246,16 @@
             dataType: 'json',
             contentType: 'application/json',
             success: function(response) {
-                if(response && response.status == "OK"){
-                    jNotify.success('Success', response.message, {
-                        delay: 2500,
-                        fadeDelay: 1000,
-                        closeButton: false,
-                        titleBold: true,
-                        offset: 40
-                    });
+                if(response && response.status == "OK") {
+                    if (showMessage) {
+                        jNotify.success('Success', response.message, {
+                            delay: 2500,
+                            fadeDelay: 1000,
+                            closeButton: false,
+                            titleBold: true,
+                            offset: 40
+                        });
+                    }
                     closeLoader();
                     renderMetaDataDatTable(response.data);
                 } else {
@@ -367,7 +372,7 @@
                         offset: 40
                     });
                     closeLoader();
-                    loadAllMetaDataForEksConfigId($('#eksConfigId').html());
+                    loadAllMetaDataForEksConfigId($('#eksConfigId').html(), false);
                 } else {
                     closeLoader();
                     jNotify.error('Error', response.message, {
@@ -410,7 +415,7 @@
                         offset: 40
                     });
                     closeLoader();
-                    loadAllEksConfigProfiles();
+                    loadAllEksConfigProfiles(false);
                 } else {
                     closeLoader();
                     jNotify.error('Error', response.message, {
@@ -478,7 +483,7 @@
                         offset: 40
                     });
                     closeLoader();
-                    loadAllMetaDataForEksConfigId($('#eksConfigId').html());
+                    loadAllMetaDataForEksConfigId($('#eksConfigId').html(), false);
                 } else {
                     closeLoader();
                     jNotify.error('Error', response.message, {
@@ -521,7 +526,7 @@
                         offset: 40
                     });
                     closeLoader();
-                    loadAllEksConfigProfiles();
+                    loadAllEksConfigProfiles(false);
                 } else {
                     closeLoader();
                     jNotify.error('Error', response.message, {
@@ -579,7 +584,7 @@
     var fireMetaDataViewAction = function(id) {
         $('#metaDataModal').modal('show');
         $('#eksConfigId').html(id);
-        loadAllMetaDataForEksConfigId(id);
+        loadAllMetaDataForEksConfigId(id, true);
     }
 
     var fireEksConfigDeleteAction = function(id) {
@@ -673,7 +678,7 @@
         });
     }
 
-    var loadAllEksConfigProfiles = function() {
+    var loadAllEksConfigProfiles = function(showMessage) {
         openLoader('Loading all Eks Configs...');
         $.ajax({
             url: '/eks/getAllEksConfigProfile',
@@ -683,13 +688,15 @@
             contentType: 'application/json',
             success: function(response) {
                 if(response && response.status == "OK"){
-                    jNotify.success('Success', response.message, {
-                        delay: 2500,
-                        fadeDelay: 1000,
-                        closeButton: false,
-                        titleBold: true,
-                        offset: 40
-                    });
+                    if (showMessage) {
+                        jNotify.success('Success', response.message, {
+                            delay: 2500,
+                            fadeDelay: 1000,
+                            closeButton: false,
+                            titleBold: true,
+                            offset: 40
+                        });
+                    }
                     closeLoader();
                     renderEksConfigDatTable(response.data);
                 } else {
@@ -752,7 +759,7 @@
                     });
                     $('#parsedEksConfigYamlModal').modal('hide');
                     closeLoader();
-                    loadAllEksConfigProfiles();
+                    loadAllEksConfigProfiles(false);
                 } else{
                     closeLoader();
                     jNotify.error('Error', response.message, {
@@ -839,6 +846,14 @@
         $(checkboxes).each(function(key, el) {
             el.addEventListener('lcs-statuschange', (e) => {
                 isStrictParsingEnabled = (el.checked) ? true : false;
+                var msg = isStrictParsingEnabled ? 'Strict yaml parsing enabled' : 'Strict yaml parsing disabled';
+                jNotify.info('Info', msg, {
+                    delay: 2500,
+                    fadeDelay: 1000,
+                    closeButton: false,
+                    titleBold: true,
+                    offset: 40
+                });
             });
         });
 
@@ -986,7 +1001,7 @@
             }
         });
 
-        loadAllEksConfigProfiles();
+        loadAllEksConfigProfiles(true);
     })
 
 </script>

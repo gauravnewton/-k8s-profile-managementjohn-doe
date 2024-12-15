@@ -1,4 +1,4 @@
-name: Build a JAR in spring boot using springboot
+name: Test & Build Code
 on:
   push:
     branches:

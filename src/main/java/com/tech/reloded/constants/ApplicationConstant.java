@@ -52,7 +52,7 @@ public class ApplicationConstant {
     /**
      * The constant EKS_CONFIG_UPDATED.
      */
-    public static final String EKS_CONFIG_UPDATED ="Eks Config updated successfully";
+    public static final String EKS_CONFIG_UPDATED ="Eks Config patched successfully";
 
     /**
      * The constant EKS_CONFIG_DELETED.
